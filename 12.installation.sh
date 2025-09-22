@@ -10,8 +10,26 @@ fi
 dnf install mysql -y
 
 if [ $? -ne 0 ]; then
-    echo "ERROR:: installing mysql is failure"
+    echo "Error:: Installing mysql is failure"
     exit 1
 else
-    echo "installing mysql is Success"
+    echo "Installing mysql is Success"
+fi
+
+dnf install nginx -y
+
+if [ $? -ne 0 ]; then
+    echo "Error:: Installing nginx is failure"
+    exit 1
+else
+    echo "Installing nginx is Success"
+fi
+
+dnf install mongodb-mongosh -y
+ 
+if [ $? -ne 0 ]; then
+    echo "Error:: Installing mongodb-mongosh is failure"
+    exit 1
+else
+    echo "Installing mongodb-mongosh is Success"
 fi
