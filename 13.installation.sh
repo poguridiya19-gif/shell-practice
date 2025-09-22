@@ -18,7 +18,7 @@ fi
 
 dnf install nginx -y
 
-if ( $? -ne 0); then
+if [ $? -ne 0 ]; then
     echo "error installing nginx is failure"
     exit 1
 else
@@ -27,8 +27,9 @@ fi
 
 dnf install mongodb-mongosh -y
  
-if ( $? -ne 0 ); then
+if [ $? -ne 0 ]; then
     echo "error:: installing mongodb-mongosh is failure"
+    exit 1
 else
     echo "installing mongodb-mongosh is Success"
 fi
