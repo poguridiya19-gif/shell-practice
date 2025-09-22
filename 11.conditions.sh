@@ -9,4 +9,8 @@ else
     echo " given number $NUMBER is odd "
 fi
 
-
+if [ $(($NUMBER % 2)) -eq 1 ]; then
+    echo " given number $NUMBER is prime number "
+else 
+    echo " given number $NUMBER is composite number "
+fi
