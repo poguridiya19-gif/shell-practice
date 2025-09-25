@@ -8,6 +8,8 @@ if [ $USERID -ne 0 ]; then
 fi
 
 VALIDATE(){ # functions recieve input through args just like shell script args
+#$1 → exit status ($?)
+#$2 → package name (for user-friendly message)
     if [ $1 -ne 0 ]; then
         echo "Error:: Installing $2 is failure"
         exit 1
