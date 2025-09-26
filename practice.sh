@@ -4,7 +4,7 @@ echo "please enter the number"
 read number
 
 if [$(($number % 2)) -eq 0]; then
-    echo "reminder is 0 then it is even"
+    echo "given $number is even"
 else
-    echo "reminder is not 0 then it is odd"
+    echo "given $number is odd"
 fi
