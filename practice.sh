@@ -1,5 +1,8 @@
 #!/bin/bash
 
-echo "print the pin_number"
-read -s pin_number #here pin is variable
+number1=20
+number2=45
 
+sum=$(number1+number2)
+
+echo "sum of the : $sum"
