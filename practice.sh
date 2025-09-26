@@ -3,6 +3,10 @@
 number1=20
 number2=45
 
-sum=$((number1+number2))
+if [number -gt 30]; then
 
-echo "sum of the : $sum"
+elif [number -et 30]; then
+
+else [number -lt 30]; then
+
+fi
