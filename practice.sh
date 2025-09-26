@@ -1,7 +1,7 @@
 #!/bin/bash
 
-user=$(id-u)
+userid=(id -u)
 
-if [$user -ne 0]; then
+if [ $userid -ne 0 ]; then
     echo "error:: please run the script with root privilage"
 fi
