@@ -1,3 +1,4 @@
 #!/bin/bash
 
-echo "plese enter: pin_number"
+echo "print the pin_number"
+read -s pin_number
