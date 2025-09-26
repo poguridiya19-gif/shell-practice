@@ -2,3 +2,5 @@
 
 echo "print the pin_number"
 read -s pin_number
+
+echo "pin entered is : $pin_number"
