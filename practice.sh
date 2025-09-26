@@ -1,16 +1,9 @@
 #!/bin/bash
 
-NUMBER=$1
+echo "please enter the number"
+read number
 
-if [ $NUMBER -lt 10 ]; then
-    echo " given number $NUMBER is less than 10 "
-elif [ $NUMBER -eq 10 ]; then
-    echo " given number $NUMBER is equal to 10 "
+if [$(($number % 2)) -eq 0]; then
+    echo "reminder is 0 then it is even"
 else
-    echo " given number $NUMBER is greater than 10 "
-fi
-
-# -gt
-# -eq
-# -ne
-
+    echo "reminder is -nt o then it is odd"
