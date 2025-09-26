@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USERID=(ID -U)
+USERID=$(ID -u)
 
 if [ $USERID -ne 0 ]; then
     echo " error:: please run with root privelage"
