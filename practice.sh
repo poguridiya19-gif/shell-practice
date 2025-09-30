@@ -4,32 +4,26 @@ USERID=$(id -u)
 
 if [ $USERID -ne 0 ]; then
     echo "ERROR:: Please run these script with root privelege"
-    exit 1 # factor is other than 0 
+    exit 1
 fi
+
+VALIDATE(){
+    #$1=exit status
+    #$2=package name
+    if [ $1 -ne 0 ]; then
+        echo "Installing $2 is failure"
+        exit 1
+    else 
+        echo "Installing $2 is success"
+    fi
+}
 
 dnf install mysql -y
-
-if [ $? -ne 0 ]; then
-    echo "ERROR:: Installing mysql is failure"
-    exit 1
-else
-    echo "Installing mysql is success"
-fi
+VALIDATE $? "MYSQL"
 
 dnf install nginx -y
-
-if [ $? -ne 0 ]; then
-    echo "ERROR:: Installing nginx is failure"
-    exit 1
-else
-    echo "Installing nginx is success"
-fi
+VALIDATE $? "NGINX"
 
 dnf install python3 -y
+VALIDATE $? "PYTHON3"
 
-if [ $? -ne 0 ]; then
-    echo "ERROR:: Installing python3 is failure"
-    exit 1
-else
-    echo "Installing python3 is success"
-fi
