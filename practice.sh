@@ -6,44 +6,33 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+LOGS_FOLDER="/var/log/shell-script"
+SCRIPT_NAME=$( echo $0 | cut -d "." -f1)
+LOG_FILE=$LOGS_FOLDER/$SCRIPT_NAME.log"
+
+mkdir -p $LOGS_FOLDER
+echo "script started executed at : $(date)"
+
 if [ $USERID -ne 0 ]; then
-    echo "ERROR:: Please run these script with root privelege"
+    echo "error:: please run these script with root privelege"
     exit 1
 fi
 
-VALIDATE(){
-    #$1=exit status
-    #$2=package name
+VALIDATE(){ #functions recieve input through args just like shell script args
     if [ $1 -ne 0 ]; then
-        echo -e "$G Installing $2 is failure $N"
+        echo -e "$R error:: installing $2 is failure $N"
         exit 1
-    else 
-        echo -e "$G Installing $2 is success $N"
+    else
+        echo -e "$R installing $2 is success $N"
     fi
 }
 
-dnf list installed mysql
-#install if it is not found 
-if [ $? -ne 0 ]; then
+dnf list installed mysql &>>$LOG_FILE
+# install if it is not found
+if [ $? -ne 0 ]; then &>>$LOG_FILE
     dnf install mysql -y
-    VALIDATE $? "MYSQL"
-else
-    echo -e "MYSQL already exist...$R skipping $N"
-fi
-
-dnf list installed nginx
-if [ $? -ne 0 ]; then
-    dnf install nginx -y
-    VALIDATE $? "NGINX"
-else
-    echo -e "NGNIX already exist...$Y skipping $N"
-fi
-
-dnf list installed python3
-if [ $? -ne 0 ]; then
-    dnf install python3 -y
-    VALIDATE $? "PYTHON3"
-else
-    echo -e "python3 already exist...$G Skipping $N"
+    VALIDATE $? "MySQL"
+else 
+    echo -e "MySQL already exist ... $G SKIPPING $N"
 fi
 
