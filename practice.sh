@@ -1,6 +1,10 @@
 #!/bin/bash
 
 USERID=$(id -u)
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
 if [ $USERID -ne 0 ]; then
     echo "ERROR:: Please run these script with root privelege"
@@ -11,10 +15,10 @@ VALIDATE(){
     #$1=exit status
     #$2=package name
     if [ $1 -ne 0 ]; then
-        echo "Installing $2 is failure"
+        echo "$G Installing $2 is failure $N"
         exit 1
     else 
-        echo "Installing $2 is success"
+        echo "$G Installing $2 is success $N"
     fi
 }
 
