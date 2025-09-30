@@ -6,3 +6,7 @@ if ( $USERID -ne 0 ); then
     echo "error:: please run with root privilage"
     exit 1 #factor other than 0
 fi
+
+#gt
+#lt
+#ne
