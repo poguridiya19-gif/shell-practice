@@ -1,8 +1,8 @@
 #!/bin/bash
 
-USERID=$(ID -u)
+USERID=$(id -u)
 
-if ( $USERID -ne 0 ); then
+if ($USERID  -ne  0); then
     echo "error:: please run with root privilage"
     exit 1 #factor other than 0
 fi
