@@ -20,10 +20,10 @@ fi
 
 VALIDATE(){ #functions recieve input through args just like shell script args
     if [ $1 -ne 0 ]; then
-        echo -e "$R error:: installing $2 is failure $N"
+        echo -e "$G error:: installing $2 is failure $N"
         exit 1
     else
-        echo -e "$R installing $2 is success $N"
+        echo -e "$G installing $2 is success $N"
     fi
 }
 
