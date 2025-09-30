@@ -15,10 +15,10 @@ VALIDATE(){
     #$1=exit status
     #$2=package name
     if [ $1 -ne 0 ]; then
-        echo "$G Installing $2 is failure $N"
+        echo -e "$G Installing $2 is failure $N"
         exit 1
     else 
-        echo "$G Installing $2 is success $N"
+        echo -e "$G Installing $2 is success $N"
     fi
 }
 
