@@ -36,7 +36,7 @@ if [ $? -ne 0 ]; then
     dnf install nginx -y
     VALIDATE $? "NGINX"
 else
-    else -e "NGNIX already exist...$R skipping $N"
+    echo -e "NGNIX already exist...$R skipping $N"
 fi
 
 dnf list installed python3
