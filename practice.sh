@@ -8,7 +8,7 @@ N="\e[0m"
 
 LOGS_FOLDER="/var/log/shell-script"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1)
-LOG_FILE=$LOGS_FOLDER/$SCRIPT_NAME.log"
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
 echo "script started executed at : $(date)"
@@ -28,11 +28,10 @@ VALIDATE(){ #functions recieve input through args just like shell script args
 }
 
 dnf list installed mysql &>>$LOG_FILE
-# install if it is not found
-if [ $? -ne 0 ]; then &>>$LOG_FILE
-    dnf install mysql -y
+# Install if it is not found
+if [ $? -ne 0 ]; then 
+    dnf install mysql -y &>>$LOG_FILE
     VALIDATE $? "MySQL"
 else 
     echo -e "MySQL already exist ... $G SKIPPING $N"
 fi
-
