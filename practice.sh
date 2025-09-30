@@ -16,7 +16,7 @@ else
     echo "Installing mysql is success"
 fi
 
-dnf installing nginx -y
+dnf install nginx -y
 
 if [ $? -ne 0 ]; then
     echo "ERROR:: Installing nginx is failure"
@@ -25,11 +25,11 @@ else
     echo "Installing nginx is success"
 fi
 
-dnf installing python -3
+dnf install python3 -y
 
 if [ $? -ne 0 ]; then
-    echo "ERROR:: Installing python is failure"
+    echo "ERROR:: Installing python3 is failure"
     exit 1
 else
-    echo "Installing python is success"
+    echo "Installing python3 is success"
 fi
