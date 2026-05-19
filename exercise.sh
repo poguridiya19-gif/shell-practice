@@ -2,5 +2,5 @@
 # VARIABLE="shell scripting is fun!"
 # echo $VARIABLE
 
-HOSTNAME="hostname"
+HOSTNAME="diya"
 echo  "this script is running on $HOSTNAME"
