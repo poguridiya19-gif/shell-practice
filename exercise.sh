@@ -16,7 +16,7 @@
 #    echo "you do not have permissions to execute $FILE_PATH"
 # fi
 
-animals="pig,cow,lion,elephant"
+animals="pig cow lion elephant"
 for i in $animals
 do 
   echo $i
