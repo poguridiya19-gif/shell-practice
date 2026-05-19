@@ -6,6 +6,6 @@
 # echo  "this script is running on $HOSTNAME"
 
 FILE_PATH="/home/ec2-user"
-if [-e "$FILE_PATH"]; then
+if [ -e "$FILE_PATH" ]; then
    echo "$FILE_PATH paswords are enabled"
 fi   
